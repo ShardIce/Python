@@ -4,9 +4,8 @@ import shutil
 FILES_INPUT = 'C:/Users/admin/Desktop/python/rookie' # Входные файлы
 FILES_OUTPUT = 'C:/Users/admin/Desktop/python/' # Выходные файлы
 
-dirpath = FILES_INPUT #Путь к файлам
-for filename in os.listdir(dirpath):
-     filepath = os.path.join(dirpath, filename) #Путь и файл
+for filename in os.listdir(FILES_INPUT):
+     filepath = os.path.join(FILES_INPUT, filename) #Путь и файл
      base, ext = os.path.splitext(filepath) # Создаем папку назначения
      os.mkdir(base) # Создаем папку как название файла
      path = shutil.move(filepath, base) # Перенесем файл внутрь папки
