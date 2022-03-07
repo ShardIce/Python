@@ -8,9 +8,7 @@ dirpath = FILES_INPUT #Путь к файлам
 for filename in os.listdir(dirpath):
      filepath = os.path.join(dirpath, filename) #Путь и файл
      dirpath, filename = os.path.split(filepath) #Путь, файлы
-     base, ext = os.path.splitext(filepath)
-     # Создаем папку назначения
+     base, ext = os.path.splitext(filepath) # Создаем папку назначения
      os.mkdir(base)
-     # Перенесем файл внутрь папки
-     path = shutil.move(filepath, base)
+     path = shutil.move(filepath, base) # Перенесем файл внутрь папки
      print(path)
