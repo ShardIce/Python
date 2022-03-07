@@ -1,20 +1,18 @@
-#import glob
-import shutil
 import os
-import pathlib
-from pathlib import Path
+import shutil
 
-FILES_INPUT = 'C:\\Users\\admin\\Desktop\\python\\rookie' # Входные файлы
-FILES_OUTPUT = 'C:\\Users\\admin\\Desktop\\python\\' # Выходные файлы
+FILES_INPUT = 'C:/Users/admin/Desktop/python/rookie' # Входные файлы
+FILES_OUTPUT = 'C:/Users/admin/Desktop/python/' # Выходные файлы
 
-for dirpath, dirnames, filenames in os.walk(FILES_INPUT):
-    for filename in filenames:
-        if os.listdir(FILES_INPUT):
-            if not os.path.isdir(filename):
-                for filename in filenames:
-                    os.mkdir(os.path.splitext(filename)[0])
-                    print(Path(FILES_OUTPUT, os.path.splitext(filename)[0]))
-                    move_files = Path(FILES_OUTPUT, os.path.splitext(filename)[0])
-                    shutil.move(move_files)
-        else:
-                    print("НЕТ НИЧЕГО")
+dirpath = FILES_INPUT #Путь к файлам
+for filename in os.listdir(dirpath):
+     filepath = os.path.join(dirpath, filename) #Путь и файл
+     dirpath, filename = os.path.split(filepath) #Путь, файлы
+     base, ext = os.path.splitext(filepath)
+     source = filepath
+     destination = base
+     # Создаем папку назначения
+     os.mkdir(destination)
+     # Перенесем файл внутрь папки
+     path = shutil.move(source, destination)
+     print(path)
