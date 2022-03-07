@@ -2,7 +2,7 @@ import shutil
 import os
 
 FILES_INPUT = 'C:\\Users\\admin\\Desktop\\python\\rookie' # Входные файлы
-FILES_OUTPUT = 'C:\\Users\\admin\\Desktop\\python\\' # Входные файлы
+FILES_OUTPUT = 'C:\\Users\\admin\\Desktop\\python\\' # Выходные файлы
 
 for dirpath, dirnames, filenames in os.walk(FILES_INPUT):
     for filename in filenames:
